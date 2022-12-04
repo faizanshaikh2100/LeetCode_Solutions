@@ -27,13 +27,16 @@ public class GfG {
 class Solution
 {
     public int firstElementKTime(int[] arr, int n, int k) { 
+        //1.make hashmap to store all values
         HashMap<Integer,Integer>map=new HashMap<>();
         int ans=-1;
         for(int i=0;i<n;i++){
-            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+            //if key is persent update its count by 1 else set count to 1
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);  
+            //at any point if occurance or value of any key becomes euqal to k
             if(map.get(arr[i])==k)
             {
-                ans=arr[i];
+                ans=arr[i];     //storing the key into the ans
                 break;
             }
         }
